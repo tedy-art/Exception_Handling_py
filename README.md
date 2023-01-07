@@ -1,9 +1,13 @@
 Exception Handling :-
+
     -> Unwanted, unexpected even which distrub the normal flow of program 
        is called exception.
+
     -> Exception is nothing but run time error.
+
     -> At the time of exception program terminates abnormally(AT = Abnormal
        Termination).
+       
     -> In program there is no error and my total program executed without 
        error is called NT(Normal Termination).
 
