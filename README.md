@@ -170,3 +170,66 @@ finally :-
             # Finally always run
             print("It's over")
             print("Bye Bye")
+
+There are two types of exception:-
+    1] In-built
+    2] Customize or user define exception
+
+1] In-built exception:-
+    ZeroDivisionError, ValueError, FileNotFoundError, etc...
+
+2] Customize or user defined exception:-
+-> We can create our own exception
+
+    Q. How to create  user defined exception?? 
+    -> One python exception is equal to one exception(error).
+
+    -> we can raise error by using raise keyword
+
+    syntax:
+
+    class class_name(Exception):
+        def __init__(self, msg):
+            self.msg = msg
+
+    syntax for raise:-
+        raise class_name('msg')
+    
+    e.g. 
+    class AgeTooSmallError(Exception):
+    def __init__(self, msg):
+        self.msg = msg
+
+    class AgeTooBigError(Exception):
+        def __init__(self, msg):
+            self.msg = msg
+
+    age = eval(input("Enter your age :"))
+    if age < 18:
+        raise AgeTooSmallError("Your age is too small for RTO Lincence..")
+
+    if age > 65:
+        raise AgeTooBigError("Your age is too big for RTO Lincence..")
+
+
+    e.g.
+    print("Student presenty report")
+
+    class studentIneligiblePresenty(Exception):
+        def __init__(self, msg):
+            self.msg = msg
+
+    class studentIsNotPresentInMock(Exception):
+        def __init__(self, msg):
+            self.msg = msg
+
+    presenty = eval(input("Enter student presenty : "))
+    mock = input("Did the student take the mock exam[y/n] : ")
+
+    if presenty < 75:
+        raise studentIneligiblePresenty("Studnet is Ineligible for exam.")
+
+    elif  mock.lower() != 'y':
+        raise studentIsNotPresentInMock("Student is Ineligible for exam")
+    else:
+        print("Studnet is eligible for exam.")
